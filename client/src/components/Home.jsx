@@ -8,7 +8,7 @@ function Home() {
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <div className="text-xl sm:text-3xl md:text-5xl capitalize font-black text-center mx-2 sm:mx-6 md:mx-10 lg:mx-44 mt-14">
-        Tickter your one stop for all your event needs
+        Tickter your one stop for all your event management needs
       </div>
       <img
         src="/event1.jpeg"
