@@ -13,7 +13,9 @@ function GetWeather() {
   const fetchWeather = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:3050/weather/${city}`);
+      const response = await axios.get(
+        `https://tickter.onrender.com/weather/${city}`
+      );
       setWeather(response.data);
       setError("");
     } catch (err) {

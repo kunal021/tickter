@@ -15,6 +15,7 @@ import UpdateEVent from "./UpdateEvent";
 import { Button } from "./ui/button";
 import Paging from "./Paging";
 import { Input } from "./ui/input";
+import { Loader2 } from "lucide-react";
 
 function GetEvent({ data, setData }) {
   const { user } = useUser();
@@ -30,7 +31,7 @@ function GetEvent({ data, setData }) {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://localhost:3050/events/${user?.id}?search=${search}&page=${pageNumber}&limit=10`
+          `https://tickter.onrender.com/events/${user?.id}?search=${search}&page=${pageNumber}&limit=10`
         );
         if (response.status === 200) {
           setData(response.data.events);
@@ -48,7 +49,9 @@ function GetEvent({ data, setData }) {
   const deleteEvent = async (id) => {
     try {
       setLoading(true);
-      const response = await axios.delete(`http://localhost:3050/event/${id}`);
+      const response = await axios.delete(
+        `https://tickter.onrender.com/event/${id}`
+      );
       if (response.status === 200) {
         setData((prevData) => prevData.filter((event) => event._id !== id));
         toast.success("Event deleted successfully");
@@ -76,6 +79,11 @@ function GetEvent({ data, setData }) {
           placeholder="Search by title, description or location"
         />
       </div>
+      {loading && (
+        <div className="flex justify-center items-center min-h-[80vh]">
+          <Loader2 className="w-6 h-6 animate-spin" />
+        </div>
+      )}
       {Array.isArray(data) &&
         data.map(
           (event) =>

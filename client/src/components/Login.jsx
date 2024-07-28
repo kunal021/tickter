@@ -34,7 +34,7 @@ function Login() {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:3050/login",
+        "https://tickter.onrender.com/login",
         formData
       );
 

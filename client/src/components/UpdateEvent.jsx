@@ -33,7 +33,7 @@ function UpdateEVent({ setUpdateData, updateData }) {
     try {
       setLoading(true);
       const response = await axios.patch(
-        `http://localhost:3050/event/${updateData._id}`,
+        `https://tickter.onrender.com/event/${updateData._id}`,
         {
           eventId: updateData._id,
           newEvent: { data },

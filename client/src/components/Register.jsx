@@ -36,7 +36,7 @@ function Register() {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:3050/register",
+        "https://tickter.onrender.com/register",
         formData
       );
 

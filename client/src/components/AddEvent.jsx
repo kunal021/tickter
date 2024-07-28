@@ -32,7 +32,7 @@ function AddEvent({ setAddData }) {
   const addEvent = async () => {
     try {
       setLoading(true);
-      const response = await axios.post("http://localhost:3050/event", {
+      const response = await axios.post("https://tickter.onrender.com/event", {
         userId: user.id,
         ...data,
       });

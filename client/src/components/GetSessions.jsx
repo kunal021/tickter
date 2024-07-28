@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useUser } from "@/contex";
 import Paging from "./Paging";
+import { Loader2 } from "lucide-react";
 
 function GetSessions() {
   const { user } = useUser();
@@ -18,7 +19,7 @@ function GetSessions() {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://localhost:3050/sessions?page=${pageNumber}&limit=10`
+          `https://tickter.onrender.com/sessions?page=${pageNumber}&limit=10`
         );
         if (response.status === 200) {
           setData(response.data.sessions);
@@ -42,6 +43,11 @@ function GetSessions() {
   return (
     <div className="flex flex-col gap-8 w-full">
       <p className="text-3xl font-black text-center">Users Sessions</p>
+      {loading && (
+        <div className="flex justify-center items-center min-h-[80vh]">
+          <Loader2 className="w-6 h-6 animate-spin" />
+        </div>
+      )}
       {Array.isArray(data) &&
         data.map(
           (session) =>

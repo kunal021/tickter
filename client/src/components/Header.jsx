@@ -18,7 +18,7 @@ function Header() {
   const navigate = useNavigate();
   const logout = async () => {
     try {
-      await axios.post("http://localhost:3050/logout", {
+      await axios.post("https://tickter.onrender.com/logout", {
         sessionToken: session?.sessionToken,
       });
       sessionStorage.removeItem("user");
