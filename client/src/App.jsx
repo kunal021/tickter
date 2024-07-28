@@ -7,6 +7,7 @@ import { UserProvider } from "./contex";
 import { Toaster } from "react-hot-toast";
 import RequireAuth from "./components/RequireAuth";
 import GetSessions from "./components/GetSessions";
+import GetWeather from "./components/GetWeather";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,14 @@ const router = createBrowserRouter([
         element: (
           <RequireAuth>
             <GetSessions />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "/weather",
+        element: (
+          <RequireAuth>
+            <GetWeather />
           </RequireAuth>
         ),
       },

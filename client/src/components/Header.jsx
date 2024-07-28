@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { CalendarCheck, Cookie, LogOut } from "lucide-react";
+import { CalendarCheck, Cookie, LogOut, Sun } from "lucide-react";
 import axios from "axios";
 
 function Header() {
@@ -67,6 +67,10 @@ function Header() {
                 <DropdownMenuItem>
                   <Cookie className="mr-2 h-4 w-4" />
                   <Link to="/sessions">All Sessions</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Sun className="mr-2 h-4 w-4" />
+                  <Link to="/weather">Weather</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={logout} className="text-red-400">
                   <LogOut className="mr-2 h-4 w-4" />
