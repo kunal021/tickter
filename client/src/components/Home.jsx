@@ -13,7 +13,7 @@ function Home() {
       <img
         src="/event1.jpeg"
         alt="home"
-        className="rounded-lg h-96 w-[60%] object-cover my-10"
+        className="rounded-lg h-60 md:h-96 w-80 md:w-[60%] object-cover my-10"
       />
       <div>
         {isAuthenticated ? (
