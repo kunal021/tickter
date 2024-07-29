@@ -1,4 +1,6 @@
-# Please visit the below link for API Documentation and Deployment Documentation
+# Technology Used ReactJS, NodeJS, ExpressJS, MongoDB, Supabase.
+
+# Please visit the below link for API Documentation, Database Schema Documentation and Deployment Documentation
 
 https://mangrove-houseboat-fed.notion.site/Tickter-API-Documentation-af7e76b4fae24b89a57dfa8a6a248b2e
 
